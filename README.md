@@ -1,2 +1,2 @@
-# rock-paper-scissors-angular
-RockPaperScissors
+# rock-paper-scissors-lizard-spock
+RockPaperScissorsLizardSpock
