@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'rps-game',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  public myChoice: string;
+  public houseChoice: string;
+  public counter: number = 3;
+  public interval;
+  public status: string;
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute) { }
+
+  public ngOnInit(): void {
+    this.getMyChoice();
+    this.startCounter();
+
   }
 
+  public getMyChoice(): void {
+    this.myChoice = this.route.snapshot.paramMap.get('myChoice');
+  }
+
+  public startCounter() {
+    this.interval = setInterval(() => {
+      this.counter -= 1;
+      if (this.counter === 0) {
+        clearInterval(this.interval);
+      }
+    }, 1000);
+  }
 }
