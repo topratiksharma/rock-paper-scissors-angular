@@ -26,45 +26,46 @@
             border: 18px solid;
             border-radius: 50%;
             transition: transform 0.2s;
+            cursor: pointer;
 
             &--rock {
                 @include icon($imageR, $rock-gradient);
-                transform: translateX(-14rem) translateY(11rem);
+                transform: translateX(11rem) translateY(28rem);
 
                 &:hover {
-                    transform: translateX(-14rem) translateY(11rem) scale(1.1);
+                    transform: translateX(11rem) translateY(28rem) scale(1.1);
                 }
             }
             &--paper {
                 @include icon($imageP, $paper-gradient);
-                transform: translateX(20rem);
+                transform: translateX(35rem) translateY(12rem);
 
                 &:hover {
-                    transform: translateX(1.5rem) scale(1.1);
+                    transform: translateX(35rem) translateY(12rem) scale(1.1);
                 }
             }
             &--scissors {
                 @include icon($imageS, $scissors-gradient);
-                transform: translateX(25rem);
+                transform: translateX(10rem);
 
                 &:hover {
-                    transform: translateX(8rem) scale(1.1);
-                }
-            }
-            &--lizard {
-                @include icon($imageL, $lizard-gradient);
-                transform: translateX(-10rem) translateY(13rem);
-
-                &:hover {
-                    transform: translateX(-10rem) translateY(13rem) scale(1.1);
+                    transform: translateX(10rem) scale(1.1);
                 }
             }
             &--spock {
                 @include icon($imageSp, $spock-gradient);
-                transform: translateX(-10rem) translateY(13rem);
+                transform: translateX(-35rem) translateY(12rem);
 
                 &:hover {
-                    transform: translateX(-10rem) translateY(13rem) scale(1.1);
+                    transform: translateX(-35rem) translateY(12rem) scale(1.1);
+                }
+            }
+            &--lizard {
+                @include icon($imageL, $lizard-gradient);
+                transform: translateX(-20rem) translateY(28rem);
+
+                &:hover {
+                    transform: translateX(-20rem) translateY(28rem) scale(1.1);
                 }
             }
         }
