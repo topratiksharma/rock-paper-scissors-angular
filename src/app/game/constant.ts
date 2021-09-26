@@ -20,3 +20,4 @@ export const GAME_STATUS = {
 }
 
 export const COUNTER = 3;
+export const ONE_SECOND = 1000;

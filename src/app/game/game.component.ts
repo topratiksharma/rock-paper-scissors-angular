@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CHOICES, COMBINATIONS, GAME_STATUS, PLAYER_STATUS } from './constant';
+import { CHOICES, COMBINATIONS, GAME_STATUS, PLAYER_STATUS, COUNTER, ONE_SECOND } from './constant';
 
 @Component({
   selector: 'rps-game',
@@ -39,7 +39,7 @@ export class GameComponent implements OnInit {
         clearInterval(this.interval);
         this.findWinner();
       }
-    }, 1000);
+    }, ONE_SECOND);
   }
 
   private findWinner() {
