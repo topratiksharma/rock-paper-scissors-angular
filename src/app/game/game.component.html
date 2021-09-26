@@ -1,20 +1,19 @@
 <div class="game">
     <div class="game__you">
         <span class="text">You Picked</span>
-        <div class="icon icon--{{myChoice}} {{status==='win' ? 'icon--{{myChoice}}--winner': '' }}"></div>
+        <div class="icon icon--{{myChoice}}" [ngClass]="status === 'win' ? 'icon--'+ myChoice + '--winner' : ''"></div>
     </div>
 
-    <div class="game__play">
-        <span class="text">Draw</span>
+    <div class="game__play" *ngIf="counter===0">
+        <span class="text">{{result}}</span>
         <a routerLink="/play" class="play-again">
             Play Again
         </a>
     </div>
 
-
     <div class="game__house">
         <span class="text">The House Picked</span>
-        <div class="icon icon--{{houseChoice}} {{status==='lose' ? 'icon--{{houseChoice}}--winner': '' }}"
+        <div class="icon icon--{{houseChoice}}" [ngClass]="status === 'lose' ? 'icon--'+ houseChoice + '--winner' : ''"
             *ngIf="counter===0"></div>
         <div class="counter" *ngIf="counter>0">{{counter}}</div>
     </div>

@@ -37,11 +37,28 @@
                     @include bigShadow($scissors-gradient);
                 }
             }
+            
             &--rock {
                 @include icon($imageR, $rock-gradient);
 
                 &--winner {
                     @include bigShadow($rock-gradient);
+                }
+            }
+            
+            &--spock {
+                @include icon($imageSp, $spock-gradient);
+
+                &--winner {
+                    @include bigShadow($spock-gradient);
+                }
+            }
+
+            &--lizard {
+                @include icon($imageL, $lizard-gradient);
+
+                &--winner {
+                    @include bigShadow($lizard-gradient);
                 }
             }
         }
@@ -108,6 +125,20 @@
 
                 &--winner {
                     @include bigShadow($rock-gradient);
+                }
+            }
+            &--spock {
+                @include icon($imageSp, $spock-gradient);
+
+                &--winner {
+                    @include bigShadow($spock-gradient);
+                }
+            }
+            &--lizard {
+                @include icon($imageL, $lizard-gradient);
+
+                &--winner {
+                    @include bigShadow($lizard-gradient);
                 }
             }
         }
