@@ -7,7 +7,7 @@
     justify-content: space-between;
     margin-top: 1.875rem;
     max-width: 43.75rem;
-    padding: 1.25rem;
+    padding: 1.0rem;
     width: 100%;
 
     .text {
@@ -27,7 +27,7 @@
 
         &__score {
             color: $dark-text;
-            font-size: 3.5rem;
+            font-size: 5.5rem;
             font-weight: 700;
         }
     }
