@@ -1,3 +1,20 @@
-<rps-header></rps-header>
-<rps-game></rps-game>
-<rps-footer></rps-footer>
+<div class="play">
+    <img src='../../assets/images/bg-pentagon.svg' alt="" class="pentagon" />
+    <div class="items">
+        <a to="/game">
+            <div data-id="paper" (click)='setChoice()' class="icon icon--paper"></div>
+        </a>
+        <a to="/game">
+            <div data-id="scissors" (click)='setChoice()' class="icon icon--scissors"></div>
+        </a>
+        <a to="/game">
+            <div data-id="rock" (click)='setChoice()' class="icon icon--rock"></div>
+        </a>
+        <a to="/game">
+            <div data-id="lizard" (click)='setChoice()' class="icon icon--lizard"></div>
+        </a>
+        <a to="/game">
+            <div data-id="spock" (click)='setChoice()' class="icon icon--spock"></div>
+        </a>
+    </div>
+</div>
