@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CHOICES, COMBINATIONS } from './constant';
+import { CHOICES, COMBINATIONS, GAME_STATUS, PLAYER_STATUS } from './constant';
 
 @Component({
   selector: 'rps-game',
@@ -11,7 +11,7 @@ export class GameComponent implements OnInit {
 
   public myChoice: string;
   public houseChoice: string;
-  public counter: number = 3;
+  public counter: number = COUNTER;
   public interval;
   public status: string;
   public result: string;
@@ -43,16 +43,16 @@ export class GameComponent implements OnInit {
   }
 
   private findWinner() {
-    this.result = 'Draw';
-    
+    this.result = GAME_STATUS.DRAW;
+
     if (this.houseChoice === this.myChoice) return;
 
     if (COMBINATIONS[this.myChoice].includes(this.houseChoice)) {
-      this.status = 'win';
-      this.result = 'You won';
+      this.status = PLAYER_STATUS.WIN;
+      this.result = GAME_STATUS.WIN;
     } else {
-      this.status = 'lose';
-      this.result = 'You lose';
+      this.status = PLAYER_STATUS.LOSE;
+      this.result = GAME_STATUS.LOSE;
     }
   }
 }
