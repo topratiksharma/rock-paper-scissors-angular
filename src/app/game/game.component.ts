@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CHOICES, COMBINATIONS, GAME_STATUS, PLAYER_STATUS, COUNTER, ONE_SECOND } from './constant';
+import { NotificationService } from './../core/notification-service/notification-service';
 
 @Component({
   selector: 'rps-game',
@@ -12,11 +13,11 @@ export class GameComponent implements OnInit {
   public myChoice: string;
   public houseChoice: string;
   public counter: number = COUNTER;
-  public interval;
+  public interval: any;
   public status: string;
   public result: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private notify: NotificationService) { }
 
   public ngOnInit(): void {
     this.getMyChoice();
@@ -50,9 +51,11 @@ export class GameComponent implements OnInit {
     if (COMBINATIONS[this.myChoice].includes(this.houseChoice)) {
       this.status = PLAYER_STATUS.WIN;
       this.result = GAME_STATUS.WIN;
+      this.notify.updateCount(true);
     } else {
       this.status = PLAYER_STATUS.LOSE;
       this.result = GAME_STATUS.LOSE;
+      this.notify.updateCount(false);
     }
   }
 }
